@@ -38,6 +38,14 @@
                     <file>${file.reference.jackcess-3.0.1.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
+                <library dirs="200">
+                    <file>${file.reference.javax.mail-api-1.6.2.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.javax.mail.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
             </web-module-libraries>
             <web-module-additional-libraries/>
             <source-roots>
@@ -50,5 +58,6 @@
         <libraries xmlns="http://www.netbeans.org/ns/ant-project-libraries/1">
             <definitions>.\lib\nblibraries.properties</definitions>
         </libraries>
+        <libraries xmlns="http://www.netbeans.org/ns/cdnjs-libraries/1"/>
     </configuration>
 </project>
