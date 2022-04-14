@@ -16,9 +16,39 @@
         <servlet-name>addRecordServlet</servlet-name>
         <servlet-class>servlets.addRecordServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>servlets.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>servlets.SearchServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>newRecordServlet</servlet-name>
+        <servlet-class>servlets.newRecordServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdatePatientServlet</servlet-name>
+        <servlet-class>servlets.UpdatePatientServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditPatientServlet</servlet-name>
+        <servlet-class>servlets.EditPatientServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addPatientServlet</servlet-name>
+        <servlet-class>servlets.addPatientServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditVaccineServlet</servlet-name>
+        <servlet-class>servlets.EditVaccineServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewAccountServlet</servlet-name>
-        <url-pattern>/NewAccount</url-pattern>
+        <url-pattern>/CDC/NewAccount</url-pattern>
+        <url-pattern>/Member/NewAccount</url-pattern>
+        <url-pattern>/DoctorLogin/NewAccount</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>addRecordServlet</servlet-name>
@@ -28,11 +58,61 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/CDC/Login</url-pattern>
         <url-pattern>/Member/Login</url-pattern>
+        <url-pattern>/DoctorLogin/Login</url-pattern>
+        <url-pattern>/AdminConsole/Login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DBActionServlet</servlet-name>
         <url-pattern>/CDC/DBAction</url-pattern>
         <url-pattern>/Member/DBAction</url-pattern>
+        <url-pattern>/DoctorLogin/DBAction</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/CDC/Search</url-pattern>
+        <url-pattern>/Search</url-pattern>
+        <url-pattern>/AdminConsole/Search</url-pattern>
+        <url-pattern>/DoctorLogin/Search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>newRecordServlet</servlet-name>
+        <url-pattern>/newRecord</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdatePatientServlet</servlet-name>
+        <url-pattern>/UpdatePatient</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditPatientServlet</servlet-name>
+        <url-pattern>/CDC/EditPatient</url-pattern>
+        <url-pattern>/AdminConsole/EditPatient</url-pattern>
+        <url-pattern>/DoctorLogin/EditPatient</url-pattern>
+        <url-pattern>/EditPatient</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addPatientServlet</servlet-name>
+        <url-pattern>/CDC/addPatient</url-pattern>
+        <url-pattern>/AdminConsole/addPatient</url-pattern>
+        <url-pattern>/DoctorLogin/addPatient</url-pattern>
+        <url-pattern>/addPatient</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditVaccineServlet</servlet-name>
+        <url-pattern>/EditVaccine</url-pattern>
+        <url-pattern>/CDC/EditVaccine</url-pattern>
+        <url-pattern>/AdminConsole/EditVaccine</url-pattern>
+        <url-pattern>/DoctorLogin/EditVaccine</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateVaccineServlet</servlet-name>
+        <url-pattern>/UpdateVaccine</url-pattern>
+        <url-pattern>/CDC/UpdateVaccine</url-pattern>
+        <url-pattern>/AdminConsole/UpdateVaccine</url-pattern>
+        <url-pattern>/DoctorLogin/UpdateVaccine</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -40,7 +120,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>Member/Login.jsp</welcome-file>
+        <welcome-file>DoctorLogin/index1.jsp</welcome-file>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 </web-app>

@@ -6,42 +6,20 @@ package business;
 
 
 public class User {
-
-    private String username, password, fname, mname, lname, location, state, role, passattempt;
-    
-    // default constructor
-    public User(){
-        this.username = "";
-        this.password = "";
-        this.fname = "";
-        this.mname = "";
-        this.lname = "";
-        this.location = "";
-        this.state = "";
-        this.role = "";
-        this.passattempt = "";
-    }
-    
-        //normal constructor.  All fields should be validated BEFORE calling this method.  Add functionality for limiting scope / permissions???
-    public User(String username, String password, String fname, String mname, String lname, String location, String state, String role, String passattempt){
-        this.username = username;
-        this.password = password;
-        this.fname = fname;
-        this.mname = mname;
-        this.lname = lname;
-        this.location = location;
-        this.state = state;
-        this.role = role;
-        this.passattempt = passattempt;
-    }
-    
-    public boolean isAuthenticated(){
-        if (this.password == this.passattempt){
+    public boolean isSearchedPatients() {
+        if (searched == true){
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
-    
+    public boolean getSearched() {
+        return searched;
+    }
+
+    public void setSearched(Boolean searched) {
+        this.searched = searched;
+    }
     public String getUsername() {
         return username;
     }
@@ -58,28 +36,20 @@ public class User {
         this.password = password;
     }
 
-    public String getFname() {
-        return fname;
+    public String getAccesslevel() {
+        return accesslevel;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setAccesslevel(String accesslevel) {
+        this.accesslevel = accesslevel;
     }
 
-    public String getMname() {
-        return mname;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMname(String mname) {
-        this.mname = mname;
-    }
-
-    public String getLname() {
-        return lname;
-    }
-
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getLocation() {
@@ -90,22 +60,6 @@ public class User {
         this.location = location;
     }
 
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
     public String getPassattempt() {
         return passattempt;
     }
@@ -113,4 +67,42 @@ public class User {
     public void setPassattempt(String passattempt) {
         this.passattempt = passattempt;
     }
+
+    private String username, password, accesslevel, email, location, passattempt;
+    private Boolean searched = false;
+    // default constructor
+    
+    public User(){
+        this.username = "";
+        this.password = "";
+        this.accesslevel = "";
+        this.email = "";
+        this.location = "";
+        this.passattempt = "";
+        this.searched = false;
+    }
+    
+        //normal constructor.  All fields should be validated BEFORE calling this method.  Add functionality for limiting scope / permissions???
+    public User(String username, String password, String accesslevel, String email, String location, String passattempt){
+        this.username = username;
+        this.password = password;
+        this.accesslevel = accesslevel;
+        this.email = email;
+        this.location = location;
+        this.passattempt = passattempt;
+        this.searched = false;
+    }
+    /**
+     * Returns true if User password mataches
+     * @return boolean
+     * 
+     */
+    public boolean isAuthenticated(){
+        if (this.getPassword().equals(this.getPassattempt())){
+            return true;
+        }
+        return false;
+    }
+ 
+
 }
