@@ -55,9 +55,13 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>NewAccountServlet</servlet-name>
+<<<<<<< HEAD
         <url-pattern>/CDC/NewAccount</url-pattern>
         <url-pattern>/Member/NewAccount</url-pattern>
         <url-pattern>/DoctorLogin/NewAccount</url-pattern>
+=======
+        <url-pattern>/NewAccount</url-pattern>
+>>>>>>> origin
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>addRecordServlet</servlet-name>
