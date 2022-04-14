@@ -55,7 +55,7 @@ public class addRecordServlet extends HttpServlet {
                 // needs: get patient info from form
                 Patient p = new Patient();
                 // needs: validate p
-                sql = "UPDATE patienttbl SET " +
+                sql = "UPDATE PATIENTS SET " +
                         "RecipientID = ?, " +
                         "SocSecNum = ?, " +
                         "FirstName = ?, " +
@@ -91,7 +91,7 @@ public class addRecordServlet extends HttpServlet {
                 // needs: get vaccine info from form
                 Vaccine v = new Vaccine();
                 // needs: validate v
-                sql = "UPDATE vaccinetbl SET " +
+                sql = "UPDATE VACCINES SET " +
                         "VaccineID = ?, " +
                         "Date = ?, " +
                         "Manufactuerer = ?, " +
@@ -124,19 +124,15 @@ public class addRecordServlet extends HttpServlet {
                 sql = "UPDATE usertbl SET " +
                         "Username = ?, " +
                         "Password = ?, " +
-                        "FirstName = ?, " +
-                        "MiddleName = ?, " +
-                        "LastName = ?, " +
-                        "Location = ?, " +
-                        "Role = ?, ";
+                        "Access_Level = ?, " +
+                        "Email_Address = ?, " +
+                        "Location = ? ";
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setString(1, u.getUsername());
                 ps.setString(2, u.getPassword());
-                ps.setString(3, u.getFname());
-                ps.setString(4, u.getMname());
-                ps.setString(5, u.getLname());
-                ps.setString(6, u.getLocation());
-                ps.setString(7, u.getRole());
+                ps.setString(3, u.getAccesslevel());
+                ps.setString(4, u.getEmail());
+                ps.setString(5, u.getLocation());
                 int rc = ps.executeUpdate();
                 if (rc == 0){
                     msg += "User not updated. <br>";
