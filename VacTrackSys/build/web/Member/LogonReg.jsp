@@ -43,16 +43,16 @@
                      <img src="../Assets/Images/mercy.jpg">
                  </a>
             </div>
-            <form id="login" class="input-group" action="Login" method="post">
-                <input type="text" class="input-field" name="userid" id="userid" placeholder="User ID" required>
-                <input type="text" class="input-field" name="passwd" id="passwd" placeholder="Enter Password" required>
+            <form id="login" class="input-group">
+                <input type="text" class="input-field" id="userid" placeholder="User ID" required>
+                <input type="text" class="input-field" id="passwd" placeholder="Enter Password" required>
                 <input type="checkbox" class="check-box"><span>Remember Password</span>
                 <button type="submit" class="submit-btn">Login</button>
             </form>
-            <form id="register" class="input-group" action="NewAccount" method="post">
-                <input type="text" class="input-field" name="userid2" id="userid2" placeholder="User ID" required>
-                <input type="email" class="input-field" name="email2" id="email2" placeholder="Email ID" required>
-                <input type="text" class="input-field" name="passwd2" id="passwd2" placeholder="Enter Password" required>
+            <form id="register" class="input-group" action="">
+                <input type="text" class="input-field" placeholder="User ID" required>
+                <input type="email" class="input-field" placeholder="Email ID" required>
+                <input type="text" class="input-field" placeholder="Enter Password" required>
                 <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
                 <button type="submit" class="submit-btn">Register</button>
             </form>

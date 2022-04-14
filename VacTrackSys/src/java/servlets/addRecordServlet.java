@@ -124,15 +124,19 @@ public class addRecordServlet extends HttpServlet {
                 sql = "UPDATE usertbl SET " +
                         "Username = ?, " +
                         "Password = ?, " +
-                        "Access_Level = ?, " +
-                        "Email_Address = ?, " +
-                        "Location = ? ";
+                        "FirstName = ?, " +
+                        "MiddleName = ?, " +
+                        "LastName = ?, " +
+                        "Location = ?, " +
+                        "Role = ?, ";
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setString(1, u.getUsername());
                 ps.setString(2, u.getPassword());
-                ps.setString(3, u.getAccesslevel());
-                ps.setString(4, u.getEmail());
-                ps.setString(5, u.getLocation());
+                ps.setString(3, u.getFname());
+                ps.setString(4, u.getMname());
+                ps.setString(5, u.getLname());
+                ps.setString(6, u.getLocation());
+                ps.setString(7, u.getRole());
                 int rc = ps.executeUpdate();
                 if (rc == 0){
                     msg += "User not updated. <br>";
